@@ -13,8 +13,8 @@ public class Staminabar : MonoBehaviour
         
     }
 
-    public void updateStamina(int currentstamina, int maxStamina)
+    public void updateStamina(float currentstamina, float maxStamina)
     {
-        staminaBarImage.transform.localScale = new Vector3((float) currentstamina / maxStamina, 1, 1);
+        staminaBarImage.transform.localScale = new Vector3(currentstamina / maxStamina, 1, 1);
     }
 }
