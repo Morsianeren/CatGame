@@ -4,16 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
   - Health
   - Stamina
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Environment
+  - Player
   - Water
   - UI
-  - Player
+  - Enemy
+  - Environment
   - 
   - 
   - 
