@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
         inputListener();
         speedController();
-        staminaController();
 
         if (isGrounded)
         {
@@ -148,5 +147,24 @@ public class PlayerController : MonoBehaviour
     private void reduceStamina(float amount)
     {
         stamina -= amount;
+    }
+
+
+    private void healthController()
+    {
+        if (health <= 0)
+        {
+            //Do something
+        }
+    }
+
+    private void setHealth(float amount)
+    {
+        health = amount;
+    }
+
+    private void reduceHealth(float amount)
+    {
+        health -= amount;
     }
 }
