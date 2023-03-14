@@ -25,7 +25,7 @@ public class Healthbar : MonoBehaviour
 
     public void UpdateHealthBar(float playerHealth)
     {
-        float lives = playerHealth / 100;
+        int lives = (int) playerHealth / 100;
         float currentLifeHealth = 100 - (playerHealth % 100);
         healthBarImage.transform.localScale = new Vector3(currentLifeHealth / 100, 1, 1);
         livesText.text = lives.ToString();
