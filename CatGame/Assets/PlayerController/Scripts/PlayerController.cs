@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
     public float groundDrag;
 
+    public float staminaJumpCost;
+    public float staminaSprintCost;
+
     private float horizontalInput;
     private float verticalInput;
     private bool isSprinting;
@@ -80,6 +83,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Sprinting");
                 rb.AddForce(moveDirection.normalized * sprintSpeed * 10f, ForceMode.Force);
+                reduceStamina(staminaSprintCost, "Sprint");
             } else
             {
                 Debug.Log("Walking");
@@ -115,14 +119,15 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButton("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && stamina >= staminaJumpCost)
         {
             //Reset the Y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+            reduceStamina(staminaJumpCost, "Jump");
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0)
         {
             isSprinting = true;
         } else
@@ -131,24 +136,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void staminaController()
-    {
-        if(stamina <= 0)
-        {
-            //Do something
-        }
-    }
-
-    private void setStamina(float amount)
+    public void setStamina(float amount)
     {
         stamina = amount;
     }
 
-    private void reduceStamina(float amount)
+    private void reduceStamina(float amount, string state)
     {
-        stamina -= amount;
+        if(state == "Jump")
+        {
+            stamina -= amount;
+        } else if(state == "Sprint")
+        {
+            stamina -= amount * Time.deltaTime;
+        }
+        Debug.Log(stamina);
     }
-
 
     private void healthController()
     {
@@ -158,7 +161,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void setHealth(float amount)
+    public void setHealth(float amount)
     {
         health = amount;
     }

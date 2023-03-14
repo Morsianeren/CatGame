@@ -763,6 +763,26 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 509576282}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
+      propertyPath: stamina
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
+      propertyPath: staminaJumpCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
+      propertyPath: staminaSprintCost
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4573089117261581541, guid: cdbd36ff15b494417bd4474e647a3860,
         type: 3}
       propertyPath: m_Name
