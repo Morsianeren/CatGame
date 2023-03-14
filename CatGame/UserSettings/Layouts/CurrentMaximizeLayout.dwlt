@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 7649
+  controlID: 11268
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 7650
+  controlID: 11269
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -40.92124, y: 6.0691304, z: 56.245094}
+    m_Target: {x: -46.601654, y: 8.219564, z: 27.363667}
     speed: 2
-    m_Value: {x: -40.92124, y: 6.0691304, z: 56.245094}
+    m_Value: {x: -46.601654, y: 8.219564, z: 27.363667}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -579,13 +579,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15034725, y: -0.7456254, z: 0.17923053, w: 0.6240861}
+    m_Target: {x: 0.2743016, y: 0.31065884, z: -0.09444066, w: 0.9052738}
     speed: 2
-    m_Value: {x: 0.15033458, y: -0.74556255, z: 0.17921542, w: 0.6240335}
+    m_Value: {x: 0.27427554, y: 0.31062934, z: -0.09443169, w: 0.9051878}
   m_Size:
-    m_Target: 10.397352
+    m_Target: 3.7721498
     speed: 2
-    m_Value: 10.397352
+    m_Value: 3.7721498
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -629,8 +629,8 @@ MonoBehaviour:
     y: 405.6
     width: 808
     height: 298.80002
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 7674
+  controlID: 11293
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -725,9 +725,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 9a700000
       m_LastClickedID: 0
-      m_ExpandedIDs: 662cf1ff0cf7f3ff0efbffff
+      m_ExpandedIDs: e666ebfff06bebff1c06edff662cf1ff0cf7f3ff0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -858,22 +858,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rensh\Documents\School\Game\Game\CatGame\CatGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8a700000
-    m_LastClickedID: 28810
+    m_SelectedIDs: 066f0000
+    m_LastClickedID: 28422
     m_ExpandedIDs: 00000000046f0000066f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -927,8 +927,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 9a700000
+    m_LastClickedInstanceID: 28826
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -954,7 +954,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 71.599976}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 124
@@ -977,8 +977,8 @@ MonoBehaviour:
     y: 0
     width: 338.40002
     height: 704.4
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
