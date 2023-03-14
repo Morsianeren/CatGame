@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8257586944749574141}
   - component: {fileID: 8257586944749574139}
   - component: {fileID: 8257586944749574138}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30,12 +30,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8257586944749574080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8257586944749574143
 MeshFilter:
@@ -175,8 +175,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   investigationTime: 4
-  walkingSpeed: 10
+  walkingSpeed: 5
   runningSpeed: 15
   agent: {fileID: 8257586944749574139}
   player: {fileID: 0}
