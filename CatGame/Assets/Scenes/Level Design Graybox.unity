@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4872,9 +4872,19 @@ PrefabInstance:
       objectReference: {fileID: 45372758}
     - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
         type: 3}
+      propertyPath: health
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 492054514}
+    - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
+        type: 3}
+      propertyPath: maxHealth
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 2992046037306661933, guid: cdbd36ff15b494417bd4474e647a3860,
         type: 3}
       propertyPath: staminabar

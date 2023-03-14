@@ -10,11 +10,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Settings")]
     public Healthbar healthbar;
-    public float health = 900;
-    public float maxHealth = 900;
+    public float health;
+    public float maxHealth;
     public Staminabar staminabar;
-    public float stamina = 100;
-    public float maxStamina = 100;
+    public float stamina;
+    public float maxStamina;
     public float walkSpeed;
     public float sprintSpeed;
     public float airMultiplier;
@@ -173,6 +173,14 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             //Do something
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            takeDamage(25);
         }
     }
 

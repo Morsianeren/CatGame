@@ -83,7 +83,6 @@ public class EnemyController : MonoBehaviour
             if(playerInVision())
             {
                 agent.SetDestination(target.position);
-
             }
             else
             {
