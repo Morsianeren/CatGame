@@ -23,11 +23,11 @@ public class Healthbar : MonoBehaviour
         
     }
 
-    public void UpdateHealthBar(int playerHealth)
+    public void UpdateHealthBar(float playerHealth)
     {
-        int lives = playerHealth / 100;
-        int currentLifeHealth = 100 - (playerHealth % 100);
-        healthBarImage.transform.localScale = new Vector3(currentLifeHealth / 100f, 1, 1);
+        float lives = playerHealth / 100;
+        float currentLifeHealth = 100 - (playerHealth % 100);
+        healthBarImage.transform.localScale = new Vector3(currentLifeHealth / 100, 1, 1);
         livesText.text = lives.ToString();
     }
 }

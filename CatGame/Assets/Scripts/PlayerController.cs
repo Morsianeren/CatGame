@@ -9,8 +9,12 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
 
     [Header("Settings")]
-    public float health;
-    public float stamina;
+    public Healthbar healthbar;
+    public float health = 900;
+    public float maxHealth = 900;
+    public Staminabar staminabar;
+    public float stamina = 100;
+    public float maxStamina = 100;
     public float walkSpeed;
     public float sprintSpeed;
     public float airMultiplier;
@@ -29,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public float playerHeight;
     public LayerMask groundMask;
     private bool isGrounded;
+
+
 
     private void Start()
     {
@@ -49,7 +55,8 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             rb.drag = groundDrag;
-        } else
+        }
+        else
         {
             rb.drag = 0;
         }
@@ -79,12 +86,14 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Jumping");
                 rb.AddForce(moveDirection.normalized * sprintSpeed * 10f * airMultiplier, ForceMode.Force);
 
-            } else if (isSprinting)
+            }
+            else if (isSprinting)
             {
                 Debug.Log("Sprinting");
                 rb.AddForce(moveDirection.normalized * sprintSpeed * 10f, ForceMode.Force);
-                reduceStamina(staminaSprintCost, "Sprint");
-            } else
+                consumeStamina(staminaSprintCost, "Sprint");
+            }
+            else
             {
                 Debug.Log("Walking");
                 rb.AddForce(moveDirection.normalized * walkSpeed * 10f, ForceMode.Force);
@@ -104,7 +113,8 @@ public class PlayerController : MonoBehaviour
                 Vector3 limitedVelocity = flatVelocity.normalized * sprintSpeed;
                 rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
             }
-        } else
+        }
+        else
         {
             if (flatVelocity.magnitude > walkSpeed)
             {
@@ -124,36 +134,41 @@ public class PlayerController : MonoBehaviour
             //Reset the Y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
-            reduceStamina(staminaJumpCost, "Jump");
+            consumeStamina(staminaJumpCost, "Jump");
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0)
         {
             isSprinting = true;
-        } else
+        }
+        else
         {
             isSprinting = false;
         }
     }
 
-    public void setStamina(float amount)
+    public void consumeStamina(float staminaCost, string state)
     {
-        stamina = amount;
-    }
-
-    private void reduceStamina(float amount, string state)
-    {
-        if(state == "Jump")
+        if (state == "Jump")
         {
-            stamina -= amount;
-        } else if(state == "Sprint")
-        {
-            stamina -= amount * Time.deltaTime;
+            stamina -= staminaCost;
         }
-        Debug.Log(stamina);
+        else if (state == "Sprint")
+        {
+            stamina -= staminaCost * Time.deltaTime;
+        }
+        if (stamina < 0) { stamina = 0; }
+        staminabar.updateStamina(stamina, maxStamina);
     }
 
-    private void healthController()
+    public void regainStamina(int regainValue)
+    {
+        stamina += regainValue;
+        if (stamina > maxStamina) { stamina = maxStamina; }
+        staminabar.updateStamina(stamina, maxStamina);
+    }
+
+    private void die()
     {
         if (health <= 0)
         {
@@ -161,13 +176,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void setHealth(float amount)
+    public void takeDamage(float damageValue)
     {
-        health = amount;
+        health -= damageValue;
+        if (health < 0) { health = 0; die(); }
+        healthbar.UpdateHealthBar(health);
     }
 
-    private void reduceHealth(float amount)
+    public void heal(float healValue)
     {
-        health -= amount;
+        health += healValue;
+        if (health > maxHealth) { health = maxHealth; }
+        healthbar.UpdateHealthBar(health);
     }
 }
