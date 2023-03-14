@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void setStamina(float amount)
+    public void setStamina(float amount)
     {
         stamina = amount;
     }
@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void setHealth(float amount)
+    public void setHealth(float amount)
     {
         health = amount;
     }
