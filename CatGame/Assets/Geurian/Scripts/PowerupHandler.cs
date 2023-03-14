@@ -41,12 +41,12 @@ public class PowerupHandler : MonoBehaviour
     void OnCollisionEnter(Collision other) {
       if (other.gameObject.tag == "Player") {
          if (gameObject.tag == "Health") {
-            other.gameObject.GetComponent<PlayerController>().setHealth(10);
+            other.gameObject.GetComponent<PlayerController>().setHealth(100);
             Destroy(gameObject);
          }
 
          if (gameObject.tag == "Stamina") {
-            other.gameObject.GetComponent<PlayerController>().setStamina(10);
+            other.gameObject.GetComponent<PlayerController>().setStamina(100);
             Destroy(gameObject);
          }
       }

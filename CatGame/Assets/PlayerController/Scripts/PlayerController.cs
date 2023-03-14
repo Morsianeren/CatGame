@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
     public float groundDrag;
 
+    public float staminaJumpCost;
+
     private float horizontalInput;
     private float verticalInput;
     private bool isSprinting;
@@ -50,6 +52,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        Debug.Log(stamina);
     }
 
     private void FixedUpdate()
@@ -115,27 +119,21 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButton("Jump") && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded && stamina >= staminaJumpCost)
         {
             //Reset the Y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+            reduceStamina(staminaJumpCost);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
             isSprinting = true;
+            StartCoroutine(reduceStaminaWhileSprinting());
         } else
         {
             isSprinting = false;
-        }
-    }
-
-    private void staminaController()
-    {
-        if(stamina <= 0)
-        {
-            //Do something
         }
     }
 
@@ -147,6 +145,14 @@ public class PlayerController : MonoBehaviour
     private void reduceStamina(float amount)
     {
         stamina -= amount;
+    }
+
+    IEnumerator reduceStaminaWhileSprinting(){
+        while (isSprinting)
+        {
+            reduceStamina(1f);
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 
